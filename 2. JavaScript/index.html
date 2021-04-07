@@ -1,0 +1,74 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+function Product()
+{
+	this.id = 0;
+	this.price = 0;
+	this.setPrice = function(price)
+	{
+		this.price = price;
+		return this;
+	}
+	this.withDiscount = function(percent)
+	{
+		var discountedProduct = new Product();
+		discountedProduct.discountedPrice = ( Math.round(10*this.price*((100-percent)/100)) )/10;
+		return discountedProduct;
+	}
+}
+function Shop()
+{
+	this.products = new Array();
+	this.productsMap = new Array();
+	this.addProducts = function(products)
+	{
+		var i=0;
+		products.forEach(product=>{
+			this.products[i] = new Product();
+			this.products[i].id = product.id;
+			this.products[i].name = product.name;
+			this.products[i].price = product.price;
+			this.products[i].description = product.description;
+			this.productsMap[product.id] = i;
+			i++;
+		});
+	}
+	this.getProduct = function(id)
+	{
+		return this.products[this.productsMap[id]];
+	}
+}
+
+
+var products = [
+  {
+    "id":3,
+    "name":"Cake",
+    "price":333,
+    "description":"The tastiest cake in the world."
+  },
+  {
+    "id":5,
+    "name":"Petroleum",
+    "price":2977,
+    "description":"Black gold."
+  },
+  {
+    "id":8,
+    "name":"Moscow metro logo",
+    "price":117000000,
+    "description":"Remove circle from logo"
+  }
+];
+
+var shop = new Shop();
+shop.addProducts(products);
+
+console.log(shop.getProduct(5).setPrice(3224).withDiscount(10).discountedPrice === 2901.6);
+
+</script>
+</body>
+</html>

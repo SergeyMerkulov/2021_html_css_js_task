@@ -1,0 +1,106 @@
+﻿main {
+	width: 242px;
+	height: 181px;
+	display: grid;
+	grid-template:	"heade heade heade heade numbe numbe rtc__" 30px
+			"artic artic artic artic artic artic artic" 80px
+			"ico1_ ico1t ico1t ico2_ ico2t ico2t rbc__" 30px
+			"ico3_ ico3t ico3t ico4_ ico4t ico4t rbc__" 40px
+			/ 45px 36px 36px 21px 1fr 45px 30px ;
+	grid-gap: 0px;
+	box-shadow: 1px 1px 15px #8e8e8e;
+}
+header {
+	grid-area: heade;
+	background-color: #a5a861;
+	padding-left: 20px;
+	padding-top: 9px;
+	color: #fff;
+	font-family: Arial;
+	font-size: x-small;
+}
+.number {
+	grid-area: numbe;
+	background-color: #a5a861;
+	text-align: center;
+	padding-top: 7px;
+	color: #fff;
+	font-family: Arial;
+	font-size: small;
+}
+.right_top_corner {
+	grid-area: rtc__;
+	background: url(s-icon.png);
+	background-color: #909659;
+	background-position: 85px -2px;
+}
+article {
+	grid-area: artic;
+	font-family: Arial;
+	font-size: small;
+	padding: 20px;
+}
+.ico1 {
+	grid-area: ico1_;
+	width: 20px;
+	background: url(s-icon.png);
+	background-position: 2px 0px;
+	background-repeat: no-repeat;
+	margin-left: 20px;
+}
+.ico1_title {
+	grid-area: ico1t;
+	font-family: Arial;
+	font-size: x-small;
+	padding-top: 8px;
+}
+.ico2 {
+	grid-area: ico2_;
+	background: url(s-icon.png);
+	background-repeat: no-repeat;
+	background-position: -90px -2px;
+}
+.ico2_title {
+	grid-area: ico2t;
+	font-family: Arial;
+	font-size: x-small;
+	padding-top: 8px;
+	padding-left: 8px;
+}
+.ico3 {
+	grid-area: ico3_;
+	width: 20px;
+	background: url(s-icon.png);
+	background-position: -19px 0px;
+	background-repeat: no-repeat;
+	margin-left: 20px;
+}
+.ico3_title {
+	grid-area: ico3t;
+	font-family: Arial;
+	font-size: x-small;
+	padding-top: 8px;
+}
+.ico4 {
+	grid-area: ico4_;
+	background: url(s-icon.png);
+	background-repeat: no-repeat;
+	background-position: -39px -2px;
+}
+.ico4_title {
+	grid-area: ico4t;
+	font-family: Arial;
+	font-size: x-small;
+	padding-top: 8px;
+	padding-left: 8px;
+}
+.right_bottom_corner {
+	grid-area: rbc__;
+	background: url(s-icon.png);
+	background-position: -111px 40px;
+	background-repeat: no-repeat;
+}
+.header {
+	font-weight: 700;
+	line-height: 1.6em;		
+}
